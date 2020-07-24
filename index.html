@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form class="p-4" id="calculator" data-calculator="data.json">
+            <input type="hidden" name="paper-price-euro" value="0.39">
+            <input type="hidden" name="pp-price-euro" value="0.57">
+            <div class="form-group">
+              <label for="shape-select">Форма этикетки</label>
+              <select class="form-control" id="shape-select" disabled>
+              
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="size-select">Размер</label>
+              <select class="form-control" id="size-select" disabled>
+               
+              </select>
+            </div>
+            <div class="form-check pb-2">
+              <input type="checkbox" class="form-check-input" id="custom-size" disabled>
+              <label class="form-check-label" for="custom-size">Нет штампа</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="length">Длина (см) </label>
+                <input type="text" class="form-control only-numeric" id="length" placeholder="Длина" disabled>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="width">Ширина (см)</label>
+                <input type="text" class="form-control only-numeric" id="width" placeholder="Ширина" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="material-select">Материал</label>
+              <select class="form-control" id="material-select" disabled>
+               
+              </select>
+            </div>
+           
+            <div class="form-group">
+              <label for="colors-select">Количество цветов</label>
+              <select class="form-control" id="colors-select" disabled>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tirage">Тираж (в единицах)</label>
+              <input type="text" class="form-control only-numeric" id="tirage" placeholder="Тираж" disabled>
+            </div>
+            <div class="form-group">
+              <label for="marginal">Наценка (%)</label>
+              <input type="text" class="form-control only-numeric" id="marginal" placeholder="Наценка" disabled>
+            </div>
+            <button type="submit" id="calculator-submit" class="btn btn-primary">Рассчитать</button>
+            <div class="result pt-4" id="result">
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="calculator.js"></script>
+  </body>
+</html>
