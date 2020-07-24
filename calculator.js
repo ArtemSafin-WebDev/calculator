@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const K = 1 * item.K;
       const T = 1 * item.T;
 
-      const total = (tirage / horVer * K) + (50000 * numberOfColors * T * materialPrice * euroRate * 1.05);
+      const total = (tirage / horVer * K) + (50 * numberOfColors * T * materialPrice * euroRate * 1.05);
       console.log({
         itemForCalculation: item,
         area: {
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       result.innerHTML = `
         Без наценки: ${total.toFixed(2)} ₽ <br>
         Стоимость с наценкой: ${(total * (1 + marginal)).toFixed(2)} ₽ <br>
-        Стоимость единцы товара ${(total * (1 + marginal)).toFixed(2) / tirage} ₽ <br>
+        Стоимость единцы товара ${((total * (1 + marginal)) / tirage).toFixed(2)} ₽ <br>
       `
       
        
