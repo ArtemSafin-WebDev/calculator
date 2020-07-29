@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     onlyNumericInputs.forEach((input) => {
       input.addEventListener("input", () => {
         const value = input.value;
-        input.value = value.replace(/[^\d]+/g, "");
+        input.value = value.replace(/[^\d,.]+/g, ""); 
       });
     });
 
@@ -311,12 +311,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const euroRate = await getEuroRate();
       const material = fields.material.select.value;
 
-      let horCount = 1 * fields.size.customSizeInputs.horCount.value;
-      let verCount = 1 * fields.size.customSizeInputs.verCount.value;
-      let tAmount = (1 * fields.size.customSizeInputs.tAmount.value) / 1000;
-      let kAmount = (1 * fields.size.customSizeInputs.kAmount.value) / 1000;
-      let width = 1 * fields.size.customSizeInputs.width.value;
-      let length = 1 * fields.size.customSizeInputs.length.value;
+      let horCount = parseFloat(fields.size.customSizeInputs.horCount.value);
+      let verCount = parseFloat(fields.size.customSizeInputs.verCount.value);
+      let tAmount = parseFloat(fields.size.customSizeInputs.tAmount.value / 1000);
+      let kAmount = parseFloat(fields.size.customSizeInputs.kAmount.value / 1000);
+      let width = parseFloat(fields.size.customSizeInputs.width.value);
+      let length = parseFloat(fields.size.customSizeInputs.length.value);
 
       const materialPrice = 1 * (material === "Paper" ? paperPrice : ppPrice);
       const tirage = 1 * fields.tirage.amount.value;
